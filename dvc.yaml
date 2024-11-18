@@ -1,16 +1,19 @@
 stages:
   load_data:
     cmd: python src/stages/load_data.py --config=params.yaml
+    params:
+      - data
     deps:
-    - src/stages/load_data.py
+      - src/stages/load_data.py
     outs:
-    - data/raw/iris.csv
+      - data/raw/iris.csv
 
 
   preprocess_data:
     cmd: python src/stages/preprocess_data.py --config=params.yaml
     deps:
-    - src/stages/preprocess_data.py
+      - src/stages/preprocess_data.py
+      - params.yaml
     outs:
     - data/processed/test_iris.csv
     - data/processed/train_iris.csv
@@ -19,6 +22,7 @@ stages:
   train:
     cmd: python src/stages/train.py --config=params.yaml
     deps:
-    - src/stages/train.py
+      - src/stages/train.py
+      - params.yaml
     outs:
-    - models/model.joblib
+      - models/model.joblib

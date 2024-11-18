@@ -13,7 +13,7 @@ def load_data(config_path):
     dataset = data.frame
     dataset.to_csv(config['data']['dataset_csv'], index = False)
 
-    
+    print('Se creó el archivo iris.csv')
 
 if __name__ == '__main__':
     

@@ -8,7 +8,7 @@ def data_load(config_path):
     with open(config_path) as config_file:
         config = yaml.safe_load(config_file)
 
-    raw_data_path = config['data_load']['dataset_csv']
+    raw_data_path = config['data']['dataset_csv']
     dataset = pd.read_csv(raw_data_path)
     dataset.columns = [colname.strip(' (cm)').replace(' ', '_') for colname in dataset.columns.tolist()]
     dataset['sepal_length_to_sepal_width'] = dataset['sepal_length'] / dataset['sepal_width']

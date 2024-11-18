@@ -1,0 +1,24 @@
+stages:
+  load_data:
+    cmd: python src/stages/load_data.py --config=params.yaml
+    deps:
+    - src/stages/load_data.py
+    outs:
+    - data/raw/iris.csv
+
+
+  preprocess_data:
+    cmd: python src/stages/preprocess_data.py --config=params.yaml
+    deps:
+    - src/stages/preprocess_data.py
+    outs:
+    - data/processed/test_iris.csv
+    - data/processed/train_iris.csv
+
+
+  train:
+    cmd: python src/stages/train.py --config=params.yaml
+    deps:
+    - src/stages/train.py
+    outs:
+    - models/model.joblib

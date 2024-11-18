@@ -25,4 +25,4 @@ if __name__ == '__main__':
     args_parser.add_argument('--config', dest='config', required=True)
     args = args_parser.parse_args()
 
-    train(config_path=args)
+    train(config_path=args.config)

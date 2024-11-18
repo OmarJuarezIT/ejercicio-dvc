@@ -1,4 +1,7 @@
 [core]
     remote = myremote
 ['remote "myremote"']
-    url = /tmp/dvc
+    url = s3://dvc-storage
+    endpointurl = http://127.0.0.1:9000
+    access_key_id = 3GzqciknhIeL1kR8Q9v0
+    secret_access_key = kfXTqSsOLZVfNVQemfWDQITRtdIYJQcP3T2QVIm4

@@ -1,3 +1,7 @@
 *.csv
 /models
 /dvc-venv
+/file.txt
+/datos
+/datos.txt
+/almacenamiento_data
